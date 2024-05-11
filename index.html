@@ -6,8 +6,8 @@
     <title>Welcome to Boostdream</title>
     <style>
         body {
-            background-color: #282a36;
-            color: #f8f8f2;
+            background-color: #ffffff; 
+            color: #282a36;
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
@@ -20,6 +20,17 @@
             font-size: 2.5em;
             text-shadow: 0 0 10px #ff79c6, 0 0 20px #ff79c6, 0 0 30px #bd93f9, 0 0 40px #bd93f9;
         }
+        img {
+            width: 50%;
+            height: auto;
+            margin-top: 20px; 
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; 
+            margin-top: 20px;
+        }
         .button {
             padding: 10px 20px;
             font-size: 1em;
@@ -31,13 +42,30 @@
             cursor: pointer;
             text-decoration: none;
             box-shadow: 0 0 20px #bd93f9;
-            margin-top: 20px;
+        }
+        p {
+            text-align: center;
+            max-width: 80%;
+            margin: 20px;
+            line-height: 1.6; 
+        }
+        .abstract {
+            text-align: justify;
+            text-indent: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Introducing Boostdream, the magnificent 3D magic</h1>
-    <a href="https://boostdream.github.io/Appendix.pdf" class="button">View Appendix</a>
-    <a href="https://arxiv.org/abs/2401.16764" class="button">View Paper</a>
+    <h1>BoostDream: Efficient Refining for High-Quality Text-to-3D Generation</h1>
+    <img src="refine.png" alt="BoostDream Refinement Process">
+    <div class="abstract">
+        <p><strong><b>Abstract:</b></strong> Witnessing the evolution of text-to-image diffusion models, significant strides have been made in text-to-3D generation. Currently, two primary paradigms dominate the field of text-to-3D: the feed-forward generation solutions, capable of swiftly producing 3D assets but often yielding coarse results, and the Score Distillation Sampling (SDS) based solutions, known for generating high-fidelity 3D assets albeit at a slower pace. The synergistic integration of these methods holds substantial promise for advancing 3D generation techniques.</p>
+        <p>In this paper, we present BoostDream, a highly efficient plug-and-play 3D refining method designed to transform coarse 3D assets into high-quality. The BoostDream framework comprises three distinct processes: <b>(1)</b> We introduce 3D model distillation that fits differentiable representations from the 3D assets obtained through feed-forward generation. <b>(2)</b> A novel multi-view SDS loss is designed, which utilizes a multi-view aware 2D diffusion model to refine the 3D assets. <b>(3)</b> We propose to use prompt and multi-view consistent normal maps as guidance in refinement.</p>
+        <p>Our extensive experiment is conducted on different differentiable 3D representations, revealing that BoostDream excels in generating high-quality 3D assets rapidly, overcoming the Janus problem compared to conventional SDS-based methods. This breakthrough signifies a substantial advancement in both the efficiency and quality of 3D generation processes.</p>
+    </div>
+    <div class="button-container">
+        <a href="https://arxiv.org/abs/2401.16764" class="button">View Paper</a>
+        <a href="https://boostdream.github.io/Appendix.pdf" class="button">View Appendix</a>
+    </div>
 </body>
 </html>
